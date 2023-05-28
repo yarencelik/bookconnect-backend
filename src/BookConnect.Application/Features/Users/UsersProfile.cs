@@ -1,15 +1,16 @@
-using App.Application.Features.Users.Commands;
-using App.Application.Features.Users.Models;
-using App.Domain.Entities;
 using AutoMapper;
+using BookConnect.Application.Features.Users.Commands.CreateUser;
+using BookConnect.Application.Features.Users.Models;
+using BookConnect.Domain.Entities;
 
-namespace App.Application.Features.Users;
+namespace BookConnect.Application.Features.Users;
 
 public class UsersProfile : Profile
 {
    public UsersProfile()
    {
         CreateMap<User, UserDetailsDto>();
+        CreateMap<CreateUserDto, CreateUserCommand>();
         CreateMap<CreateUserCommand, User>();
    } 
 }

@@ -1,9 +1,9 @@
-using App.Application.Common.Exceptions;
-using App.Application.Features.Users.Models;
 using AutoMapper;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Features.Users.Models;
 using MediatR;
 
-namespace App.Application.Features.Users.Queries;
+namespace BookConnect.Application.Features.Users.Queries;
 
 public record GetUserByIdQuery(string? userId) : IRequest<UserDetailsDto>;
 

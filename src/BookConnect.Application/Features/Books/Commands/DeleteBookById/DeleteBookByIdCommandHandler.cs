@@ -1,7 +1,7 @@
-using App.Application.Common.Exceptions;
+using BookConnect.Application.Common.Exceptions;
 using MediatR;
 
-namespace App.Application.Features.Books.Commands.DeleteBookById;
+namespace BookConnect.Application.Features.Books.Commands.DeleteBookById;
 
 sealed class DeleteBookCommandHandler : IRequestHandler<DeleteBookCommand>
 {

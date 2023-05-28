@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace App.Application.Features.Reviews.Commands.AddReview;
+namespace BookConnect.Application.Features.Reviews.Commands.AddReview;
 
 public class AddReviewCommand: IRequest
 {

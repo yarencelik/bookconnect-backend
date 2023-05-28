@@ -1,11 +1,11 @@
 using System.Linq.Expressions;
-using App.Application.Common.Exceptions;
-using App.Application.Features.Posts.Models;
-using App.Domain.Entities;
 using AutoMapper;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Features.Posts.Models;
+using BookConnect.Domain.Entities;
 using MediatR;
 
-namespace App.Application.Features.Posts.Queries.GetPostsById;
+namespace BookConnect.Application.Features.Posts.Queries.GetPostsById;
 
 sealed class GetPostByIdQueryHandler : IRequestHandler<GetPostByIdQuery, PostsDetailsDto>
 {

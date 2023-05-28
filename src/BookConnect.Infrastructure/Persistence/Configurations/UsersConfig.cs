@@ -1,15 +1,10 @@
-﻿using App.Domain.Entities;
-using App.Domain.Enums;
+﻿using BookConnect.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace App.Infrastructure.Persistence.Configurations;
+
+namespace BookConnect.Infrastructure.Persistence.Configurations;
+
 public class UsersConfig : IEntityTypeConfiguration<User>
 {
 

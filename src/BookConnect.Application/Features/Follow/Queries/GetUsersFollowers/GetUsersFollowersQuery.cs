@@ -1,7 +1,7 @@
-using App.Application.Common.Models;
-using App.Application.Features.Users.Models;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Users.Models;
 
-namespace App.Application.Features.Follow.Queries.GetUsersFollowers;
+namespace BookConnect.Application.Features.Follow.Queries.GetUsersFollowers;
 
 public class GetUsersFollowersQuery : BaseQuery<UserDetailsDto>
 {

@@ -1,7 +1,8 @@
 ﻿using System.Linq.Expressions;
-using App.Application.Common.Models;
+using BookConnect.Application.Common.Models;
 
-namespace App.Application.Common.Interfaces;
+namespace BookConnect.Application.Common.Interfaces;
+
 public interface IRepositoryBase<T>
 {
     Task<IEnumerable<T>> GetAllValues();

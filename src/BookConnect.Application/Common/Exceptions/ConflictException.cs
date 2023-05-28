@@ -1,4 +1,4 @@
-namespace App.Application.Common.Exceptions;
+namespace BookConnect.Application.Common.Exceptions;
 
 public class ConflictException : Exception
 {

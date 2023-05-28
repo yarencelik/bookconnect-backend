@@ -1,8 +1,8 @@
-using App.Application.Common.Interfaces;
-using App.Application.Features.Follow.Models;
-using FollowEntity = App.Domain.Entities.Follow;
+using BookConnect.Application.Common.Interfaces;
+using BookConnect.Application.Features.Follow.Models;
+using FollowEntity = BookConnect.Domain.Entities.Follow;
 
-namespace App.Application.Features.Follow;
+namespace BookConnect.Application.Features.Follow;
 
 public interface IFollowRepository : IRepositoryBase<FollowEntity>
 {

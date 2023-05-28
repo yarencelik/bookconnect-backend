@@ -1,6 +1,7 @@
-﻿using App.Domain.Common;
+﻿using BookConnect.Domain.Common;
 
-namespace App.Domain.Entities;
+namespace BookConnect.Domain.Entities;
+
 public sealed class Post :  BaseEntity
 {
     public required string Title { get; set; }

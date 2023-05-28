@@ -1,7 +1,8 @@
-using App.Application.Common.Models;
-using App.Application.Features.Users;
-using App.Application.Features.Users.Models;
 using AutoMapper;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Follow.Queries.GetUsersFollowings;
+using BookConnect.Application.Features.Users;
+using BookConnect.Application.Features.Users.Models;
 using MediatR;
 
 namespace App.Application.Features.Follow.Queries.GetUsersFollowings;

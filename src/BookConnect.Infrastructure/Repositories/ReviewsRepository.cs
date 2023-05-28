@@ -1,8 +1,9 @@
-﻿using App.Application.Features.Reviews;
-using App.Domain.Entities;
-using App.Infrastructure.Persistence;
+﻿using BookConnect.Application.Features.Reviews;
+using BookConnect.Domain.Entities;
+using BookConnect.Infrastructure.Persistence;
 
-namespace App.Infrastructure.Repositories;
+namespace BookConnect.Infrastructure.Repositories;
+
 public class ReviewsRepository : RepositoryBase<Review>, IReviewsRepository
 {
     public ReviewsRepository(ApplicationDbContext context) : base(context)

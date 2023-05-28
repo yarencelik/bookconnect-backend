@@ -1,22 +1,21 @@
-using App.API.Common;
-using App.Application.Common.Exceptions;
-using App.Application.Common.Models;
-using App.Application.Features.Likes.Commands.AddLike;
-using App.Application.Features.Likes.Commands.RemoveLike;
-using App.Application.Features.Posts.Commands.CreatePost;
-using App.Application.Features.Posts.Commands.DeletePost;
-using App.Application.Features.Posts.Commands.UpdatePost;
-using App.Application.Features.Posts.Models;
-using App.Application.Features.Posts.Queries;
-using App.Application.Features.Posts.Queries.GetPosts;
-using App.Application.Features.Posts.Queries.GetPostsByFollowers;
-using App.Application.Features.Posts.Queries.GetPostsById;
+using BookConnect.API.Common;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Likes.Commands.AddLike;
+using BookConnect.Application.Features.Likes.Commands.RemoveLike;
+using BookConnect.Application.Features.Posts.Commands.CreatePost;
+using BookConnect.Application.Features.Posts.Commands.DeletePost;
+using BookConnect.Application.Features.Posts.Commands.UpdatePost;
+using BookConnect.Application.Features.Posts.Models;
+using BookConnect.Application.Features.Posts.Queries.GetPosts;
+using BookConnect.Application.Features.Posts.Queries.GetPostsByFollowers;
+using BookConnect.Application.Features.Posts.Queries.GetPostsById;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
-namespace App.API.Controllers;
+namespace BookConnect.API.Controllers;
 
 [ApiController]
 [Route("api/v1/[controller]")]
@@ -27,13 +26,12 @@ public sealed class PostsController : BaseController
     }
 
     [HttpGet]
-    public async Task<ActionResult<PaginatedResults<PostsDetailsDto>>> GetPosts(string? search, int page = 1, int pageSize = 10)
+    public async Task<ActionResult<PaginatedResults<PostsDetailsDto>>> GetPosts(int page = 1, int pageSize = 10)
     {
         try
         {
             var request = new GetPostsQuery
             {
-                // Search = search,
                 Page = page,
                 PageSize = pageSize
             };

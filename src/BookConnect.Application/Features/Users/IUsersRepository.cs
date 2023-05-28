@@ -1,8 +1,8 @@
-﻿using App.Application.Common.Interfaces;
-using App.Application.Common.Models;
-using App.Domain.Entities;
+﻿using BookConnect.Application.Common.Interfaces;
+using BookConnect.Application.Common.Models;
+using BookConnect.Domain.Entities;
 
-namespace App.Application.Features.Users;
+namespace BookConnect.Application.Features.Users;
 
 public interface IUsersRepository : IRepositoryBase<User>
 {

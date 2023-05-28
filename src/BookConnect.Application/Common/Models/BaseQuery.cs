@@ -1,6 +1,7 @@
 ﻿using MediatR;
 
-namespace App.Application.Common.Models;
+namespace BookConnect.Application.Common.Models;
+
 public abstract class BaseQuery<T> : IRequest<PaginatedResults<T>> where T : class
 {
     public int Page { get; set; } = 1;

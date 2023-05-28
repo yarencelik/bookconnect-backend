@@ -1,18 +1,18 @@
-using App.API.Common;
-using App.Application.Common.Exceptions;
-using App.Application.Common.Models;
-using App.Application.Features.Author.Commands.AddAuthor;
-using App.Application.Features.Author.Commands.DeleteAuthorById;
-using App.Application.Features.Author.Commands.UpdateAuthor;
-using App.Application.Features.Author.Models;
-using App.Application.Features.Author.Queries.GetAuthorById;
-using App.Application.Features.Author.Queries.GetAuthors;
+using BookConnect.API.Common;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Author.Commands.AddAuthor;
+using BookConnect.Application.Features.Author.Commands.DeleteAuthorById;
+using BookConnect.Application.Features.Author.Commands.UpdateAuthor;
+using BookConnect.Application.Features.Author.Models;
+using BookConnect.Application.Features.Author.Queries.GetAuthorById;
+using BookConnect.Application.Features.Author.Queries.GetAuthors;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
-namespace App.API.Controllers;
+namespace BookConnect.API.Controllers;
 
 [ApiController]
 [Route("api/v1/[controller]")]

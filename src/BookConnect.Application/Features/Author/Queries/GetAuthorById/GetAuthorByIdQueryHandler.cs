@@ -1,9 +1,11 @@
 using System.Linq.Expressions;
-using App.Application.Features.Author.Models;
-using AuthorEntity = App.Domain.Entities.Author;
+using AuthorEntity = BookConnect.Domain.Entities.Author;
 using AutoMapper;
 using MediatR;
-using App.Application.Common.Exceptions;
+using BookConnect.Application.Features.Author.Queries.GetAuthorById;
+using BookConnect.Application.Features.Author.Models;
+using BookConnect.Application.Features.Author;
+using BookConnect.Application.Common.Exceptions;
 
 namespace App.Application.Features.Author.Queries.GetAuthorById;
 

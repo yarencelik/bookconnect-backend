@@ -1,11 +1,11 @@
 using System.Linq.Expressions;
-using App.Application.Common.Models;
-using App.Application.Features.Reviews.Models;
-using App.Domain.Entities;
 using AutoMapper;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Reviews.Models;
+using BookConnect.Domain.Entities;
 using MediatR;
 
-namespace App.Application.Features.Reviews.Queries.GetUsersReviews;
+namespace BookConnect.Application.Features.Reviews.Queries.GetUsersReviews;
 
 sealed class GetUsersReviewsQueryHandler : IRequestHandler<GetUsersReviewsQuery, PaginatedResults<ReviewDetailsDto>>
 {

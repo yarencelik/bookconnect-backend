@@ -1,12 +1,12 @@
 using System.Linq.Expressions;
-using App.Application.Common.Exceptions;
-using App.Application.Common.Interfaces;
-using App.Application.Features.Posts;
-using App.Application.Features.Users;
-using LikesEntity = App.Domain.Entities.Likes;
+using LikesEntity = BookConnect.Domain.Entities.Likes;
 using MediatR;
+using BookConnect.Application.Common.Interfaces;
+using BookConnect.Application.Features.Users;
+using BookConnect.Application.Features.Posts;
+using BookConnect.Application.Common.Exceptions;
 
-namespace App.Application.Features.Likes.Commands.AddLike;
+namespace BookConnect.Application.Features.Likes.Commands.AddLike;
 
 sealed class AddLikeCommandHandler : IRequestHandler<AddLikeCommand>
 {

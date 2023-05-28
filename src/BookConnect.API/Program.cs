@@ -1,6 +1,7 @@
-using App.API.Extensions;
-using App.Application;
-using App.Infrastructure;
+using BookConnect.API;
+using BookConnect.API.Extensions;
+using BookConnect.Application;
+using BookConnect.Infrastructure;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,8 +1,7 @@
-using App.Application.Common.Models;
-using App.Application.Features.Reviews.Models;
-using MediatR;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Reviews.Models;
 
-namespace App.Application.Features.Reviews.Queries.GetBooksReviews;
+namespace BookConnect.Application.Features.Reviews.Queries.GetBookReviews;
 
 public class GetBookReviewsQuery : BaseQuery<ReviewDetailsDto>
 {

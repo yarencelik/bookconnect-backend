@@ -1,8 +1,8 @@
-﻿using App.Infrastructure.Persistence;
+﻿using BookConnect.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
-namespace App.API.Extensions;
+namespace BookConnect.API.Extensions;
 
 public static class DbMigrations
 {

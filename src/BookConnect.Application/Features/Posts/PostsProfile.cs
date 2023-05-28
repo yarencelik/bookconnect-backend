@@ -1,7 +1,9 @@
-using App.Application.Features.Posts.Commands.CreatePost;
-using App.Application.Features.Posts.Models;
-using App.Domain.Entities;
 using AutoMapper;
+using BookConnect.Application.Features.Posts.Commands.CreatePost;
+using BookConnect.Application.Features.Posts.Models;
+using BookConnect.Domain.Entities;
+
+namespace BookConnect.Application.Features.Posts;
 
 public class PostsProfile : Profile
 {

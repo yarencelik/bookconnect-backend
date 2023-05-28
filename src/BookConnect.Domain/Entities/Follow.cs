@@ -1,7 +1,6 @@
-using App.Domain.Common;
+using BookConnect.Domain.Common;
 
-namespace App.Domain.Entities;
-
+namespace BookConnect.Domain.Entities;
 public class Follow : BaseEntity 
 {
     public Guid? Follower_Id { get; set; }

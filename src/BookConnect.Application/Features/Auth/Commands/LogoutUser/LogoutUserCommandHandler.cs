@@ -1,8 +1,8 @@
-using App.Application.Common.Interfaces;
-using App.Application.Features.Users;
+using BookConnect.Application.Common.Interfaces;
+using BookConnect.Application.Features.Users;
 using MediatR;
 
-namespace App.Application.Features.Auth.Commands.LogoutUser;
+namespace BookConnect.Application.Features.Auth.Commands.LogoutUser;
 
 sealed class LogoutUserCommandHandler : IRequestHandler<LogoutUserCommand>
 {

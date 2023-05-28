@@ -1,7 +1,7 @@
-using App.Application.Common.Models;
-using App.Application.Features.Reviews.Models;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Reviews.Models;
 
-namespace App.Application.Features.Reviews.Queries.GetUsersReviews;
+namespace BookConnect.Application.Features.Reviews.Queries.GetUsersReviews;
 
 public class GetUsersReviewsQuery : BaseQuery<ReviewDetailsDto>
 {

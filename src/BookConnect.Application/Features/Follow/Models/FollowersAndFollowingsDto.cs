@@ -1,4 +1,4 @@
-namespace App.Application.Features.Follow.Models;
+namespace BookConnect.Application.Features.Follow.Models;
 
 public class FollowersAndFollowingsDto
 {

@@ -1,6 +1,7 @@
-﻿using App.Domain.Common;
+﻿using BookConnect.Domain.Common;
 
-namespace App.Domain.Entities;
+namespace BookConnect.Domain.Entities;
+
 public class Book : BaseEntity
 {
     public required string ISBN { get; set; }

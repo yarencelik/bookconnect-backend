@@ -1,27 +1,32 @@
-﻿using App.API.Common;
-using App.Application.Common.Exceptions;
-using App.Application.Common.Interfaces;
-using App.Application.Features.Auth.Commands.LoginUser;
-using App.Application.Features.Auth.Commands.LogoutUser;
-using App.Application.Features.Auth.Models;
-using App.Application.Features.Auth.Queries.RefreshUserToken;
-using App.Application.Features.Users.Commands;
-using App.Application.Features.Users.Models;
-using App.Application.Features.Users.Queries;
+﻿using AutoMapper;
+using BookConnect.API.Common;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Common.Interfaces;
+using BookConnect.Application.Features.Auth.Commands.LoginUser;
+using BookConnect.Application.Features.Auth.Commands.LogoutUser;
+using BookConnect.Application.Features.Auth.Models;
+using BookConnect.Application.Features.Auth.Queries.RefreshUserToken;
+using BookConnect.Application.Features.Users.Commands;
+using BookConnect.Application.Features.Users.Commands.CreateUser;
+using BookConnect.Application.Features.Users.Models;
+using BookConnect.Application.Features.Users.Queries;
+using BookConnect.Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace App.API.Controllers; 
+namespace BookConnect.API.Controllers;
 
 [ApiController]
 [Route("api/v1/[controller]")]
 public class AuthController : BaseController
 {
     private readonly ICurrentUserService _currentUserService;
-    public AuthController(IMediator mediator, ICurrentUserService currentUserService): base(mediator)
+    private readonly IMapper _mapper;
+    public AuthController(IMediator mediator, IMapper mapper, ICurrentUserService currentUserService): base(mediator)
     {
         _currentUserService = currentUserService;
+        _mapper = mapper;
     }
 
     [HttpPost("login")]
@@ -56,11 +61,14 @@ public class AuthController : BaseController
     }
 
     [HttpPost("register")]
-    public async Task<ActionResult> RegisterUser(CreateUserCommand registerUser)
+    public async Task<ActionResult> RegisterUser(CreateUserDto createUser)
     {
         try
         {
-            await mediator.Send(registerUser);
+            var mappedRequest = _mapper.Map<CreateUserCommand>(createUser);
+            mappedRequest.Role = UserRole.Reader;
+
+            await mediator.Send(mappedRequest);
             return Ok();
         }
         catch (Exception ex)

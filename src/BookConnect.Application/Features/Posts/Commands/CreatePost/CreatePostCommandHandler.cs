@@ -1,10 +1,10 @@
-using App.Application.Common.Interfaces;
-using App.Application.Features.Users;
-using App.Domain.Entities;
 using AutoMapper;
+using BookConnect.Application.Common.Interfaces;
+using BookConnect.Application.Features.Users;
+using BookConnect.Domain.Entities;
 using MediatR;
 
-namespace App.Application.Features.Posts.Commands.CreatePost;
+namespace BookConnect.Application.Features.Posts.Commands.CreatePost;
 
 sealed class CreatePostCommandHandler : IRequestHandler<CreatePostCommand, Guid>
 {

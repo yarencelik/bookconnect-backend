@@ -1,7 +1,7 @@
-﻿using App.Domain.Common;
-using App.Domain.Enums;
+﻿using BookConnect.Domain.Common;
+using BookConnect.Domain.Enums;
 
-namespace App.Domain.Entities;
+namespace BookConnect.Domain.Entities;
 public sealed class User : BaseEntity
 {
     public required string Username { get; set; }

@@ -1,7 +1,7 @@
-using App.Application.Common.Interfaces;
-using AuthorEntity = App.Domain.Entities.Author;
+using BookConnect.Application.Common.Interfaces;
+using AuthorEntity = BookConnect.Domain.Entities.Author;
 
-namespace App.Application.Features.Author;
+namespace BookConnect.Application.Features.Author;
 
 public interface IAuthorsRepository: IRepositoryBase<AuthorEntity>
 {

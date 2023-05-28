@@ -1,7 +1,7 @@
-using App.Application.Common.Models;
-using App.Application.Features.Posts.Models;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Posts.Models;
 
-namespace App.Application.Features.Posts.Queries.GetPosts;
+namespace BookConnect.Application.Features.Posts.Queries.GetPosts;
 
 public class GetPostsQuery : BaseQuery<PostsDetailsDto>
 {

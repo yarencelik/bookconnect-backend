@@ -1,10 +1,11 @@
-﻿using App.Application.Common.Models;
-using App.Application.Features.Users;
-using App.Domain.Entities;
-using App.Infrastructure.Persistence;
+﻿using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Users;
+using BookConnect.Domain.Entities;
+using BookConnect.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace App.Infrastructure.Repositories;
+namespace BookConnect.Infrastructure.Repositories;
+
 public class UsersRepository : RepositoryBase<User>, IUsersRepository
 {
     public UsersRepository(ApplicationDbContext context): base(context)

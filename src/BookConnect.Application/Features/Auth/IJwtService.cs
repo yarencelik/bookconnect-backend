@@ -1,6 +1,6 @@
-using App.Domain.Enums;
+using BookConnect.Domain.Enums;
 
-namespace App.Application.Features.Auth;
+namespace BookConnect.Application.Features.Auth;
 
 public interface IJwtService
 {

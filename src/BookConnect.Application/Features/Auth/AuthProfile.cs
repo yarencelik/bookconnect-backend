@@ -1,9 +1,9 @@
-﻿using App.Application.Features.Auth.Commands;
-using App.Application.Features.Auth.Models;
-using App.Domain.Entities;
-using AutoMapper;
+﻿using AutoMapper;
+using BookConnect.Application.Features.Auth.Models;
+using BookConnect.Domain.Entities;
 
-namespace App.Application.Features.Auth;
+namespace BookConnect.Application.Features.Auth;
+
 public class AuthProfile : Profile
 {
     public AuthProfile()

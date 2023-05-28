@@ -1,15 +1,17 @@
-using App.Application.Features.Author.Commands.AddAuthor;
-using App.Application.Features.Author.Models;
-using App.Domain.Entities;
 using AutoMapper;
+using BookConnect.Application.Features.Author.Commands.AddAuthor;
+using BookConnect.Application.Features.Author.Models;
+using AuthorEntity = BookConnect.Domain.Entities.Author;
+
+namespace BookConnect.Application.Features.Author;
 
 public class AuthorsProfile : Profile
 {
     public AuthorsProfile()
     {
-        CreateMap<Author, AuthorDetailsDto>();
-        CreateMap<AddAuthorCommand, Author>();
-        CreateMap<Author, UpdateAuthorDto>();
-        CreateMap<UpdateAuthorDto, Author>();
+        CreateMap<AuthorEntity, AuthorDetailsDto>();
+        CreateMap<AddAuthorCommand, AuthorEntity>();
+        CreateMap<AuthorEntity, UpdateAuthorDto>();
+        CreateMap<UpdateAuthorDto, AuthorEntity>();
     }
 }

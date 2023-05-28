@@ -1,4 +1,4 @@
-namespace App.Application.Features.Reviews.Models;
+namespace BookConnect.Application.Features.Reviews.Models;
 
 public class AddReviewDto
 {

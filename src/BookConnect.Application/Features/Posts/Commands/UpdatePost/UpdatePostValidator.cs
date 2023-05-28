@@ -1,7 +1,7 @@
-using App.Application.Features.Posts.Models;
+using BookConnect.Application.Features.Posts.Models;
 using FluentValidation;
 
-namespace App.Application.Features.Posts.Commands.UpdatePost;
+namespace BookConnect.Application.Features.Posts.Commands.UpdatePost;
 
 public class UpdatePostValidator : AbstractValidator<UpdatePostDto>
 {

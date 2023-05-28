@@ -1,5 +1,7 @@
-using App.Application.Common.Models;
-using App.Application.Features.Books.Models;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Books.Models;
+
+namespace BookConnect.Application.Features.Books.Queries.GetBooks;
 
 public class GetBooksQuery : BaseQuery<BookDetailsDto>
 {

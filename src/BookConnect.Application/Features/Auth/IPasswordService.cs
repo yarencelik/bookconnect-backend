@@ -1,4 +1,4 @@
-namespace App.Application.Features.Auth;
+namespace BookConnect.Application.Features.Auth;
 
 public interface IPasswordService
 {

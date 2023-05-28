@@ -1,11 +1,11 @@
 using System.Linq.Expressions;
-using App.Application.Common.Models;
-using App.Application.Features.Posts.Models;
-using App.Domain.Entities;
 using AutoMapper;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Posts.Models;
+using BookConnect.Domain.Entities;
 using MediatR;
 
-namespace App.Application.Features.Posts.Queries.GetPosts;
+namespace BookConnect.Application.Features.Posts.Queries.GetPosts;
 
 sealed class GetPostsQueryHandler : IRequestHandler<GetPostsQuery, PaginatedResults<PostsDetailsDto>>
 {

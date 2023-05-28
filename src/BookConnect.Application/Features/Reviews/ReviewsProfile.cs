@@ -1,9 +1,9 @@
-﻿using App.Application.Features.Reviews.Commands.AddReview;
-using App.Application.Features.Reviews.Models;
-using App.Domain.Entities;
-using AutoMapper;
+﻿using AutoMapper;
+using BookConnect.Application.Features.Reviews.Commands.AddReview;
+using BookConnect.Application.Features.Reviews.Models;
+using BookConnect.Domain.Entities;
 
-namespace App.Application.Features.Reviews;
+namespace BookConnect.Application.Features.Reviews;
 public sealed class ReviewsProfile : Profile
 {
     public ReviewsProfile()

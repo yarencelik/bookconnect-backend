@@ -1,8 +1,7 @@
-﻿using App.Domain.Common;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using BookConnect.Domain.Common;
 
-namespace App.Domain.Entities;
+namespace BookConnect.Domain.Entities;
+
 public class Likes : BaseEntity
 {
     public Guid? Like_User_Id { get; set; }

@@ -1,6 +1,6 @@
-using App.Application.Features.Posts.Models;
+using BookConnect.Application.Features.Posts.Models;
 using MediatR;
 
-namespace App.Application.Features.Posts.Queries.GetPostsById;
+namespace BookConnect.Application.Features.Posts.Queries.GetPostsById;
 
 public record GetPostByIdQuery(string postId) : IRequest<PostsDetailsDto>;

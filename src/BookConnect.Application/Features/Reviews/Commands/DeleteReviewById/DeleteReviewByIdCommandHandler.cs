@@ -1,7 +1,7 @@
-using App.Application.Common.Exceptions;
+using BookConnect.Application.Common.Exceptions;
 using MediatR;
 
-namespace App.Application.Features.Reviews.Commands.DeleteReviewById;
+namespace BookConnect.Application.Features.Reviews.Commands.DeleteReviewById;
 
 sealed class DeleteReviewByIdCommandHandler : IRequestHandler<DeleteReviewByIdCommand>
 {

@@ -1,6 +1,6 @@
-﻿using App.Application.Common.Exceptions;
-using App.Application.Features.Auth;
-using App.Domain.Enums;
+﻿using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Features.Auth;
+using BookConnect.Domain.Enums;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -8,7 +8,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace App.Infrastructure.Services;
+namespace BookConnect.Infrastructure.Services;
+
 public sealed class JwtService : IJwtService
 {
     private readonly IConfiguration _config;

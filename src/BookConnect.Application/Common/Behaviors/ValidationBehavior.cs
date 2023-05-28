@@ -1,9 +1,10 @@
-﻿using ValidationException = App.Application.Common.Exceptions.ValidationException;
+﻿using ValidationException = BookConnect.Application.Common.Exceptions.ValidationException;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace App.Application.Common.Behaviors;
+namespace BookConnect.Application.Common.Behaviors;
+
 public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;

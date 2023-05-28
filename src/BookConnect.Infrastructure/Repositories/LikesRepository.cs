@@ -1,8 +1,8 @@
-using App.Application.Features.Likes;
-using App.Domain.Entities;
-using App.Infrastructure.Persistence;
+using BookConnect.Application.Features.Likes;
+using BookConnect.Domain.Entities;
+using BookConnect.Infrastructure.Persistence;
 
-namespace App.Infrastructure.Repositories;
+namespace BookConnect.Infrastructure.Repositories;
 
 public sealed class LikesRepository : RepositoryBase<Likes>, ILikesRepository
 {

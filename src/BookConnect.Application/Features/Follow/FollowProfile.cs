@@ -1,6 +1,6 @@
 using AutoMapper;
 
-namespace App.Application.Features.Follow;
+namespace BookConnect.Application.Features.Follow;
 
 public sealed class FollowProfile : Profile
 {

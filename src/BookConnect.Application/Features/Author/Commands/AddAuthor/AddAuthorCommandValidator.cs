@@ -1,6 +1,7 @@
 using FluentValidation;
 
-namespace App.Application.Features.Author.Commands.AddAuthor;
+namespace BookConnect.Application.Features.Author.Commands.AddAuthor;
+
 
 public class AddAuthorCommandValidator : AbstractValidator<AddAuthorCommand>
 {

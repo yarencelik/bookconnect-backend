@@ -1,7 +1,7 @@
-using App.Application.Common.Exceptions;
+using BookConnect.Application.Common.Exceptions;
 using MediatR;
 
-namespace App.Application.Features.Posts.Commands.DeletePost;
+namespace BookConnect.Application.Features.Posts.Commands.DeletePost;
 
 sealed class DeletePostCommandHandler : IRequestHandler<DeletePostCommand>
 {

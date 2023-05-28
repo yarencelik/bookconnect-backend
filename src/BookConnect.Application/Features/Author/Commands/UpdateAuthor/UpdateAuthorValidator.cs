@@ -1,7 +1,7 @@
-using App.Application.Features.Author.Models;
+using BookConnect.Application.Features.Author.Models;
 using FluentValidation;
 
-namespace App.Application.Features.Author.Commands.UpdateAuthor;
+namespace BookConnect.Application.Features.Author.Commands.UpdateAuthor;
 
 public class UpdateAuthorValidator : AbstractValidator<UpdateAuthorDto>
 {

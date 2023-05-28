@@ -1,7 +1,7 @@
-using App.Application.Features.Reviews.Models;
+using BookConnect.Application.Features.Reviews.Models;
 using FluentValidation;
 
-namespace App.Application.Features.Reviews.Commands.UpdateReview;
+namespace BookConnect.Application.Features.Reviews.Commands.UpdateReview;
 
 public sealed class UpdateReviewValidator : AbstractValidator<UpdateReviewDto>
 {

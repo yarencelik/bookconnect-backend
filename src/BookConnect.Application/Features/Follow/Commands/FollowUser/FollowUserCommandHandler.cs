@@ -1,10 +1,10 @@
-using App.Application.Common.Exceptions;
-using App.Application.Common.Interfaces;
-using App.Application.Features.Users;
-using FollowEntity = App.Domain.Entities.Follow;
+using FollowEntity = BookConnect.Domain.Entities.Follow;
 using MediatR;
+using BookConnect.Application.Common.Interfaces;
+using BookConnect.Application.Features.Users;
+using BookConnect.Application.Common.Exceptions;
 
-namespace App.Application.Features.Follow.Commands.FollowUser;
+namespace BookConnect.Application.Features.Follow.Commands.FollowUser;
 
 sealed class FollowUserCommandHandler : IRequestHandler<FollowUserCommand>
 {

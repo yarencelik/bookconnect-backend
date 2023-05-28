@@ -1,11 +1,12 @@
 ﻿using System.Linq.Expressions;
-using App.Application.Common.Exceptions;
-using App.Application.Features.Reviews.Models;
-using App.Domain.Entities;
 using AutoMapper;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Features.Reviews.Models;
+using BookConnect.Domain.Entities;
 using MediatR;
 
-namespace App.Application.Features.Reviews.Queries;
+namespace BookConnect.Application.Features.Reviews.Queries;
+
 public record GetReviewByIdQuery(string reviewId) : IRequest<ReviewDetailsDto>;
 
 

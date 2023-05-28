@@ -1,10 +1,10 @@
-using App.Application.Features.Auth;
-using App.Domain.Entities;
-using App.Domain.Enums;
+using BookConnect.Application.Features.Auth;
+using BookConnect.Domain.Entities;
+using BookConnect.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace App.Infrastructure.Persistence.Seeds;
+namespace BookConnect.Infrastructure.Persistence.Seeds;
 
 public static class InitialData
 {

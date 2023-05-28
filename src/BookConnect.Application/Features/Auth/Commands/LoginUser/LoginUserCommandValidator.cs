@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace App.Application.Features.Auth.Commands.LoginUser;
+namespace BookConnect.Application.Features.Auth.Commands.LoginUser;
 
 public class LoginUserCommandValidator : AbstractValidator<LoginUserCommand>
 {

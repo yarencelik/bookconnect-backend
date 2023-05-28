@@ -1,20 +1,22 @@
-using App.API.Common;
-using App.Application.Common.Exceptions;
-using App.Application.Common.Models;
-using App.Application.Features.Follow.Commands.FollowUser;
-using App.Application.Features.Follow.Commands.UnfollowUser;
-using App.Application.Features.Follow.Models;
-using App.Application.Features.Follow.Queries.GetUsersFollowers;
-using App.Application.Features.Follow.Queries.GetUsersFollowersAndFollowingsCount;
-using App.Application.Features.Follow.Queries.GetUsersFollowings;
-using App.Application.Features.Posts.Models;
-using App.Application.Features.Posts.Queries;
-using App.Application.Features.Reviews.Models;
-using App.Application.Features.Reviews.Queries.GetUsersReviews;
-using App.Application.Features.Users.Models;
+using BookConnect.API.Common;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Follow.Commands.FollowUser;
+using BookConnect.Application.Features.Follow.Commands.UnfollowUser;
+using BookConnect.Application.Features.Follow.Models;
+using BookConnect.Application.Features.Follow.Queries.GetUsersFollowers;
+using BookConnect.Application.Features.Follow.Queries.GetUsersFollowersAndFollowingsCount;
+using BookConnect.Application.Features.Follow.Queries.GetUsersFollowings;
+using BookConnect.Application.Features.Posts.Models;
+using BookConnect.Application.Features.Posts.Queries;
+using BookConnect.Application.Features.Reviews.Models;
+using BookConnect.Application.Features.Reviews.Queries.GetUsersReviews;
+using BookConnect.Application.Features.Users.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+
+namespace BookConnect.API.Controllers;
 
 [ApiController]
 [Route("api/v1/[controller]")]

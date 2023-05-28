@@ -1,7 +1,7 @@
-using App.Application.Features.Books.Models;
-using App.Application.Features.Users.Models;
+using BookConnect.Application.Features.Books.Models;
+using BookConnect.Application.Features.Users.Models;
 
-namespace App.Application.Features.Reviews.Models;
+namespace BookConnect.Application.Features.Reviews.Models;
 
 public class ReviewDetailsDto
 {

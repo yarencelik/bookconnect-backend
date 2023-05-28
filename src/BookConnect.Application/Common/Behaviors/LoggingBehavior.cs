@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 
 
-namespace App.Application.Common.Behaviors;
+namespace BookConnect.Application.Common.Behaviors;
 public class LoggingBehavior<TRequest> : IRequestPreProcessor<TRequest> where TRequest : notnull 
 {
     private readonly ILogger<LoggingBehavior<TRequest>> _logger;

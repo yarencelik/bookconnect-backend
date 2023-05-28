@@ -1,7 +1,7 @@
 using System.Security.Claims;
-using App.Application.Common.Interfaces;
+using BookConnect.Application.Common.Interfaces;
 
-namespace App.API.Service;
+namespace BookConnect.API.Service;
 
 public class CurrentUserService : ICurrentUserService
 {

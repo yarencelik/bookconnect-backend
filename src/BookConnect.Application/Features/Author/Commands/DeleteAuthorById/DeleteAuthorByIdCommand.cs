@@ -1,5 +1,5 @@
 using MediatR;
 
-namespace App.Application.Features.Author.Commands.DeleteAuthorById;
+namespace BookConnect.Application.Features.Author.Commands.DeleteAuthorById;
 
 public record DeleteAuthorByIdCommand(string authorId) : IRequest;

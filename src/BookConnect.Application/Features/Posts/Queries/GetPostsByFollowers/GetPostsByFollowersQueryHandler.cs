@@ -1,10 +1,11 @@
-using App.Application.Common.Interfaces;
-using App.Application.Common.Models;
-using App.Application.Features.Posts.Models;
 using AutoMapper;
+using BookConnect.Application.Common.Interfaces;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Posts;
+using BookConnect.Application.Features.Posts.Models;
 using MediatR;
 
-namespace App.Application.Features.Posts.Queries.GetPostsByFollowers;
+namespace BookConnect.Application.Features.Posts.Queries.GetPostsByFollowers;
 
 sealed class GetPostsByFollowersQueryHandler: IRequestHandler<GetPostsByFollowersQuery, PaginatedResults<PostsDetailsDto>>
 {

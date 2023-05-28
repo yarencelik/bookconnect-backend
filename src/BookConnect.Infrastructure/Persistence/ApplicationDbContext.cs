@@ -1,13 +1,13 @@
-﻿using App.Application.Features.Auth;
-using App.Domain.Common;
-using App.Domain.Entities;
-using App.Infrastructure.Persistence.Seeds;
+﻿using BookConnect.Domain.Common;
+using BookConnect.Domain.Entities;
+using BookConnect.Infrastructure.Persistence.Seeds;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Reflection;
+using BookConnect.Application.Features.Auth;
 
+namespace BookConnect.Infrastructure.Persistence;
 
-namespace App.Infrastructure.Persistence;
 public sealed class ApplicationDbContext : DbContext
 {
     public DbSet<User> Users => Set<User>();

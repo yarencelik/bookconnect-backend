@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace App.Application.Features.Reviews.Commands.AddReview;
+namespace BookConnect.Application.Features.Reviews.Commands.AddReview;
 
 public sealed class AddReviewCommandValidator : AbstractValidator<AddReviewCommand>
 {

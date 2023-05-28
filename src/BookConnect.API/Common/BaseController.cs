@@ -1,8 +1,7 @@
-﻿using App.Application.Common.Interfaces;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace App.API.Common;
+namespace BookConnect.API.Common;
 
 public abstract class BaseController : ControllerBase
 {

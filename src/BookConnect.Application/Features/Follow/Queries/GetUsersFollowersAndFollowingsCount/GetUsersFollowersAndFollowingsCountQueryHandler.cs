@@ -1,9 +1,9 @@
-using App.Application.Common.Exceptions;
-using App.Application.Features.Follow.Models;
-using App.Application.Features.Users;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Features.Follow.Models;
+using BookConnect.Application.Features.Users;
 using MediatR;
 
-namespace App.Application.Features.Follow.Queries.GetUsersFollowersAndFollowingsCount;
+namespace BookConnect.Application.Features.Follow.Queries.GetUsersFollowersAndFollowingsCount;
 
 sealed class GetFollowsCountByUserIdQueryHandler : IRequestHandler<GetUsersFollowersAndFollowingsCountQuery, FollowersAndFollowingsDto>
 {

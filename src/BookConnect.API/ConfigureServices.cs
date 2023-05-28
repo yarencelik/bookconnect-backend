@@ -1,14 +1,16 @@
 using System.Text;
-using App.API.Service;
-using App.Application.Common.Interfaces;
-using App.Domain.Enums;
+using BookConnect.API.Service;
+using BookConnect.Application.Common.Interfaces;
+using BookConnect.Domain.Enums;
 using Microsoft.IdentityModel.Tokens;
+
+namespace BookConnect.API;
 
 public static class ConfigureServices
 {
     public static IServiceCollection AddAPIServices(this IServiceCollection services, IConfiguration config)
     {
-        services.AddScoped<ICurrentUserService,CurrentUserService>();
+        services.AddScoped<ICurrentUserService, CurrentUserService>();
         services.AddAuthentication().AddJwtBearer(opt =>
         {
             opt.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()

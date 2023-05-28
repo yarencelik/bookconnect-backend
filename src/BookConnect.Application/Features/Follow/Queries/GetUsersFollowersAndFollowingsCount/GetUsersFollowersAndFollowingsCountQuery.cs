@@ -1,6 +1,6 @@
-using App.Application.Features.Follow.Models;
+using BookConnect.Application.Features.Follow.Models;
 using MediatR;
 
-namespace App.Application.Features.Follow.Queries.GetUsersFollowersAndFollowingsCount;
+namespace BookConnect.Application.Features.Follow.Queries.GetUsersFollowersAndFollowingsCount;
 
 public record GetUsersFollowersAndFollowingsCountQuery(string userId) : IRequest<FollowersAndFollowingsDto>;

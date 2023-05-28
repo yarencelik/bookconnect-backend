@@ -1,7 +1,7 @@
-using App.Application.Common.Interfaces;
-using LikesEntity = App.Domain.Entities.Likes;
+using BookConnect.Application.Common.Interfaces;
+using LikesEntity = BookConnect.Domain.Entities.Likes;
 
-namespace App.Application.Features.Likes;
+namespace BookConnect.Application.Features.Likes;
 
 public interface ILikesRepository : IRepositoryBase<LikesEntity>
 {

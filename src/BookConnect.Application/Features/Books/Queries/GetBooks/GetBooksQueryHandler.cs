@@ -1,11 +1,11 @@
 using System.Linq.Expressions;
-using App.Application.Common.Models;
-using App.Application.Features.Books.Models;
-using App.Domain.Entities;
 using AutoMapper;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Books.Models;
+using BookConnect.Domain.Entities;
 using MediatR;
 
-namespace App.Application.Features.Books.Queries.GetBooks;
+namespace BookConnect.Application.Features.Books.Queries.GetBooks;
 
 sealed class GetBooksQueryHandler : IRequestHandler<GetBooksQuery, PaginatedResults<BookDetailsDto>>
 {

@@ -1,8 +1,8 @@
-using App.Application.Common.Exceptions;
+using BookConnect.Application.Common.Exceptions;
 using MediatR;
-using AuthorEntity = App.Domain.Entities.Author;
+using AuthorEntity = BookConnect.Domain.Entities.Author;
 
-namespace App.Application.Features.Author.Commands.AddAuthor;
+namespace BookConnect.Application.Features.Author.Commands.AddAuthor;
 
 sealed class AddAuthorCommandHandler : IRequestHandler<AddAuthorCommand, Guid>
 {

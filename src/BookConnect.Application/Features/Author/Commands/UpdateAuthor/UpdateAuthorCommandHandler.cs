@@ -1,9 +1,9 @@
-using App.Application.Common.Exceptions;
-using App.Application.Features.Author.Models;
 using AutoMapper;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Features.Author.Models;
 using MediatR;
 
-namespace App.Application.Features.Author.Commands.UpdateAuthor;
+namespace BookConnect.Application.Features.Author.Commands.UpdateAuthor;
 
 sealed class UpdateAuthorsCommandHandler : IRequestHandler<UpdateAuthorCommand>
 {

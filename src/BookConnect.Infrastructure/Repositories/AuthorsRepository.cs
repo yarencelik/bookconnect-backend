@@ -1,8 +1,8 @@
-using App.Application.Features.Author;
-using App.Domain.Entities;
-using App.Infrastructure.Persistence;
+using BookConnect.Application.Features.Author;
+using BookConnect.Domain.Entities;
+using BookConnect.Infrastructure.Persistence;
 
-namespace App.Infrastructure.Repositories;
+namespace BookConnect.Infrastructure.Repositories;
 
 public class AuthorsRepository : RepositoryBase<Author>, IAuthorsRepository
 {

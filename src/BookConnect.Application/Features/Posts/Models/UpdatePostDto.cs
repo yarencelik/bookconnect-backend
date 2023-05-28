@@ -1,4 +1,4 @@
-namespace App.Application.Features.Posts.Models;
+namespace BookConnect.Application.Features.Posts.Models;
 
 public class UpdatePostDto
 {

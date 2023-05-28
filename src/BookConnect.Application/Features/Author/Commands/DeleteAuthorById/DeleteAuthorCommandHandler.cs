@@ -1,7 +1,7 @@
-using App.Application.Common.Exceptions;
+using BookConnect.Application.Common.Exceptions;
 using MediatR;
 
-namespace App.Application.Features.Author.Commands.DeleteAuthorById;
+namespace BookConnect.Application.Features.Author.Commands.DeleteAuthorById;
 
 sealed class DeleteAuthorByIdCommandHandler : IRequestHandler<DeleteAuthorByIdCommand>
 {

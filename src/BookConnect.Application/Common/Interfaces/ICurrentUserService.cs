@@ -1,4 +1,4 @@
-namespace App.Application.Common.Interfaces;
+namespace BookConnect.Application.Common.Interfaces;
 
 public interface ICurrentUserService
 {

@@ -1,17 +1,18 @@
-﻿using App.API.Common;
-using App.Application.Common.Exceptions;
-using App.Application.Common.Models;
-using App.Application.Features.Books.Commands.AddBook;
-using App.Application.Features.Books.Commands.DeleteBookById;
-using App.Application.Features.Books.Models;
-using App.Application.Features.Books.Queries.GetBooksById;
-using App.Application.Features.Reviews.Models;
-using App.Application.Features.Reviews.Queries.GetBooksReviews;
+﻿using BookConnect.API.Common;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Books.Commands.AddBook;
+using BookConnect.Application.Features.Books.Commands.DeleteBookById;
+using BookConnect.Application.Features.Books.Models;
+using BookConnect.Application.Features.Books.Queries.GetBooks;
+using BookConnect.Application.Features.Books.Queries.GetBooksById;
+using BookConnect.Application.Features.Reviews.Models;
+using BookConnect.Application.Features.Reviews.Queries.GetBookReviews;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace App.API.Controllers;
+namespace BookConnect.API.Controllers;
 
 [ApiController]
 [Route("api/v1/[controller]")]

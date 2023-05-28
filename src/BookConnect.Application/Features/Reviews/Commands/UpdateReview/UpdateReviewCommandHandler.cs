@@ -1,11 +1,11 @@
-using App.Application.Common.Exceptions;
-using App.Application.Features.Reviews.Models;
-using ValidationException = App.Application.Common.Exceptions.ValidationException;
+using ValidationException = BookConnect.Application.Common.Exceptions.ValidationException;
 using AutoMapper;
 using FluentValidation;
 using MediatR;
+using BookConnect.Application.Features.Reviews.Models;
+using BookConnect.Application.Common.Exceptions;
 
-namespace App.Application.Features.Reviews.Commands.UpdateReview;
+namespace BookConnect.Application.Features.Reviews.Commands.UpdateReview;
 
 sealed class UpdateReviewCommandHandler : IRequestHandler<UpdateReviewCommand>
 {

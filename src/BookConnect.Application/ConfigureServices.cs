@@ -1,10 +1,11 @@
-﻿using App.Application.Common.Behaviors;
+﻿using BookConnect.Application.Common.Behaviors;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace App.Application;
+namespace BookConnect.Application;
+
 public static class ConfigureServices
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)

@@ -1,11 +1,10 @@
-using App.Application.Common.Models;
-using App.Application.Features.Posts;
-using App.Domain.Entities;
-using App.Infrastructure.Persistence;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Posts;
+using BookConnect.Domain.Entities;
+using BookConnect.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
 
-namespace App.Infrastructure.Repositories;
+namespace BookConnect.Infrastructure.Repositories;
 
 public class PostsRepository : RepositoryBase<Post>, IPostsRepository
 {

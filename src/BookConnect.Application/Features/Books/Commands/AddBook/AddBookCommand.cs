@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace App.Application.Features.Books.Commands.AddBook;
+namespace BookConnect.Application.Features.Books.Commands.AddBook;
 
 public class AddBookCommand : IRequest<string>
 {

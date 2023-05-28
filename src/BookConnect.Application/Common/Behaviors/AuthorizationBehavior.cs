@@ -1,9 +1,9 @@
 using System.Reflection;
-using App.Application.Common.Interfaces;
+using BookConnect.Application.Common.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 
-namespace App.Application.Common.Behaviors;
+namespace BookConnect.Application.Common.Behaviors;
 
 public class AuthorizationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {

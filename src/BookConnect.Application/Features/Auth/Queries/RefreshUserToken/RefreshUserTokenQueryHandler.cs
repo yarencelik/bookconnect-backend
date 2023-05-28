@@ -1,9 +1,9 @@
-using App.Application.Features.Auth;
-using App.Application.Features.Auth.Models;
-using App.Application.Features.Auth.Queries.RefreshUserToken;
-using App.Application.Features.Users;
 using AutoMapper;
+using BookConnect.Application.Features.Auth.Models;
+using BookConnect.Application.Features.Users;
 using MediatR;
+
+namespace BookConnect.Application.Features.Auth.Queries.RefreshUserToken;
 
 sealed class RefreshUserTokenQueryHandler : IRequestHandler<RefreshUserTokenQuery, (AuthDetailsDto, string)>
 {

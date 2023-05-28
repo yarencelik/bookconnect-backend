@@ -1,4 +1,5 @@
-﻿namespace App.Application.Features.Auth.Models;
+﻿namespace BookConnect.Application.Features.Auth.Models;
+
 public sealed class AuthDetailsDto
 {
     public Guid Id { get; set; }

@@ -1,9 +1,9 @@
-using App.Application.Features.Auth.Models;
-using App.Application.Features.Users;
 using AutoMapper;
+using BookConnect.Application.Features.Auth.Models;
+using BookConnect.Application.Features.Users;
 using MediatR;
 
-namespace App.Application.Features.Auth.Commands.LoginUser;
+namespace BookConnect.Application.Features.Auth.Commands.LoginUser;
 
 sealed class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, (AuthDetailsDto, string)>
 {

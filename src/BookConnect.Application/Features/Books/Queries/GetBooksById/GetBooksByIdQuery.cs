@@ -1,6 +1,6 @@
-using App.Application.Features.Books.Models;
+using BookConnect.Application.Features.Books.Models;
 using MediatR;
 
-namespace App.Application.Features.Books.Queries.GetBooksById;
+namespace BookConnect.Application.Features.Books.Queries.GetBooksById;
 
 public record GetBooksByIdQuery(string BooksId) : IRequest<BookDetailsDto>;

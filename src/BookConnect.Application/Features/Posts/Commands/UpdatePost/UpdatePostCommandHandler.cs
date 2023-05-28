@@ -1,11 +1,11 @@
-using App.Application.Common.Exceptions;
-using App.Application.Features.Posts.Models;
-using ValidationException = App.Application.Common.Exceptions.ValidationException;
+using ValidationException = BookConnect.Application.Common.Exceptions.ValidationException;
 using AutoMapper;
 using FluentValidation;
 using MediatR;
+using BookConnect.Application.Features.Posts.Models;
+using BookConnect.Application.Common.Exceptions;
 
-namespace App.Application.Features.Posts.Commands.UpdatePost;
+namespace BookConnect.Application.Features.Posts.Commands.UpdatePost;
 
 sealed class UpdatePostCommandHandler : IRequestHandler<UpdatePostCommand>
 {

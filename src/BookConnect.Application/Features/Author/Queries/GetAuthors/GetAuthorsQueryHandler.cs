@@ -1,9 +1,9 @@
-using App.Application.Common.Models;
-using App.Application.Features.Author.Models;
 using AutoMapper;
+using BookConnect.Application.Common.Models;
+using BookConnect.Application.Features.Author.Models;
 using MediatR;
 
-namespace App.Application.Features.Author.Queries.GetAuthors;
+namespace BookConnect.Application.Features.Author.Queries.GetAuthors;
 
 sealed class GetAuthorsQueryHandler : IRequestHandler<GetAuthorsQuery, PaginatedResults<AuthorDetailsDto>>
 {

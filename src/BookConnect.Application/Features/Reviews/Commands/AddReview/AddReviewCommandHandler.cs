@@ -1,13 +1,13 @@
-using App.Application.Common.Exceptions;
-using App.Application.Common.Interfaces;
-using App.Application.Features.Books;
-using App.Application.Features.Posts;
-using App.Application.Features.Users;
-using App.Domain.Entities;
 using AutoMapper;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Common.Interfaces;
+using BookConnect.Application.Features.Books;
+using BookConnect.Application.Features.Posts;
+using BookConnect.Application.Features.Users;
+using BookConnect.Domain.Entities;
 using MediatR;
 
-namespace App.Application.Features.Reviews.Commands.AddReview;
+namespace BookConnect.Application.Features.Reviews.Commands.AddReview;
 
 sealed class AddReviewCommandHandler: IRequestHandler<AddReviewCommand>
 {

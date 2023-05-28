@@ -1,9 +1,9 @@
-using App.Application.Common.Exceptions;
-using App.Application.Features.Books.Models;
 using AutoMapper;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Features.Books.Models;
 using MediatR;
 
-namespace App.Application.Features.Books.Queries.GetBooksById;
+namespace BookConnect.Application.Features.Books.Queries.GetBooksById;
 
 sealed class GetBooksByIdQueryHandler : IRequestHandler<GetBooksByIdQuery, BookDetailsDto>
 {

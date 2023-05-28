@@ -1,7 +1,8 @@
-﻿using App.Application.Common.Interfaces;
-using App.Domain.Entities;
+﻿using BookConnect.Application.Common.Interfaces;
+using BookConnect.Domain.Entities;
 
-namespace App.Application.Features.Reviews;
+namespace BookConnect.Application.Features.Reviews;
+
 public interface IReviewsRepository : IRepositoryBase<Review>
 {
 

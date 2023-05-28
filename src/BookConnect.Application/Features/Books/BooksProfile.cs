@@ -1,9 +1,10 @@
-﻿using App.Application.Features.Books.Commands.AddBook;
-using App.Application.Features.Books.Models;
-using App.Domain.Entities;
-using AutoMapper;
+﻿using AutoMapper;
+using BookConnect.Application.Features.Books.Commands.AddBook;
+using BookConnect.Application.Features.Books.Models;
+using BookConnect.Domain.Entities;
 
-namespace App.Application.Features.Books;
+namespace BookConnect.Application.Features.Books;
+
 public class BooksProfile : Profile
 {
     public BooksProfile()

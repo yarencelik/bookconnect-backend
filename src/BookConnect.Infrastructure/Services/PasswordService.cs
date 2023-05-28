@@ -1,9 +1,9 @@
 using System.Text;
-using App.Application.Features.Auth;
+using BookConnect.Application.Features.Auth;
 using Isopoh.Cryptography.Argon2;
 using Microsoft.Extensions.Configuration;
 
-namespace App.Infrastructure.Services;
+namespace BookConnect.Infrastructure.Services;
 
 public sealed class PasswordService : IPasswordService
 {

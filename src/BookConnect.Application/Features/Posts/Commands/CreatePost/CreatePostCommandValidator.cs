@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace App.Application.Features.Posts.Commands.CreatePost;
+namespace BookConnect.Application.Features.Posts.Commands.CreatePost;
 
 public class CreatePostCommandValidator : AbstractValidator<CreatePostCommand>
 {

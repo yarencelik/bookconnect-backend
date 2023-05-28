@@ -1,9 +1,9 @@
-using App.Application.Common.Exceptions;
-using App.Application.Common.Interfaces;
-using App.Application.Features.Users;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Common.Interfaces;
+using BookConnect.Application.Features.Users;
 using MediatR;
 
-namespace App.Application.Features.Follow.Commands.UnfollowUser;
+namespace BookConnect.Application.Features.Follow.Commands.UnfollowUser;
 
 sealed class UnfollowUserCommandHandler : IRequestHandler<UnfollowUserCommand>
 {

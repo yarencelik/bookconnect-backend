@@ -1,8 +1,9 @@
-using App.Application.Common.Interfaces;
-using App.Application.Common.Models;
-using App.Domain.Entities;
+using BookConnect.Application.Common.Interfaces;
+using BookConnect.Application.Common.Models;
+using BookConnect.Domain.Entities;
 
-namespace App.Application.Features.Posts;
+namespace BookConnect.Application.Features.Posts;
+
 public interface IPostsRepository : IRepositoryBase<Post>
 {
     Task<(IEnumerable<Post>, PageMetadata)> GetFollowersPosts(string followerId, int page = 1, int pageSize = 10);

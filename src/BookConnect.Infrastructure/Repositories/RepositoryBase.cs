@@ -1,11 +1,12 @@
-﻿using App.Application.Common.Interfaces;
-using App.Application.Common.Models;
-using App.Domain.Common;
-using App.Infrastructure.Persistence;
+﻿using BookConnect.Application.Common.Interfaces;
+using BookConnect.Application.Common.Models;
+using BookConnect.Domain.Common;
+using BookConnect.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace App.Infrastructure.Repositories;
+namespace BookConnect.Infrastructure.Repositories;
+
 public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : BaseEntity
 {
     protected readonly ApplicationDbContext _context;

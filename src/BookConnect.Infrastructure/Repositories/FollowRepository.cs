@@ -1,10 +1,10 @@
-using App.Application.Features.Follow;
-using App.Application.Features.Follow.Models;
-using App.Domain.Entities;
-using App.Infrastructure.Persistence;
+using BookConnect.Application.Features.Follow;
+using BookConnect.Application.Features.Follow.Models;
+using BookConnect.Domain.Entities;
+using BookConnect.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace App.Infrastructure.Repositories;
+namespace BookConnect.Infrastructure.Repositories;
 
 public class FollowRepository : RepositoryBase<Follow>, IFollowRepository
 {

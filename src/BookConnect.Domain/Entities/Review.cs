@@ -1,11 +1,6 @@
-﻿using App.Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BookConnect.Domain.Common;
 
-namespace App.Domain.Entities;
+namespace BookConnect.Domain.Entities;
 public sealed class Review : BaseEntity
 {
     public int Rating { get; set; }

@@ -1,10 +1,10 @@
-using App.Application.Common.Exceptions;
-using App.Application.Features.Author;
-using App.Domain.Entities;
 using AutoMapper;
+using BookConnect.Application.Common.Exceptions;
+using BookConnect.Application.Features.Author;
+using BookConnect.Domain.Entities;
 using MediatR;
 
-namespace App.Application.Features.Books.Commands.AddBook;
+namespace BookConnect.Application.Features.Books.Commands.AddBook;
 
 sealed class AddBookCommandHandler : IRequestHandler<AddBookCommand, string>
 {

@@ -1,5 +1,6 @@
-using App.Application.Features.Books.Commands.AddBook;
 using FluentValidation;
+
+namespace BookConnect.Application.Features.Books.Commands.AddBook;
 
 public class AddBookCommandValidator : AbstractValidator<AddBookCommand>
 {

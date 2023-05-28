@@ -1,4 +1,5 @@
-﻿namespace App.Application.Common.Models;
+﻿namespace BookConnect.Application.Common.Models;
+
 public sealed class PageMetadata
 {
     public int CurrentPage { get; set; }

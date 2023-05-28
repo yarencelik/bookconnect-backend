@@ -1,8 +1,8 @@
-using App.Domain.Entities;
+using BookConnect.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace App.Infrastructure.Persistence.Configurations;
+namespace BookConnect.Infrastructure.Persistence.Configurations;
 
 public class FollowConfig : IEntityTypeConfiguration<Follow>
 {

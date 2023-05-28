@@ -1,4 +1,4 @@
-namespace App.Application.Features.Author.Models;
+namespace BookConnect.Application.Features.Author.Models;
 
 public class UpdateAuthorDto
 {

@@ -1,15 +1,9 @@
-﻿using App.Application.Common.Models;
-using App.Application.Features.Books;
-using App.Domain.Entities;
-using App.Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BookConnect.Application.Features.Books;
+using BookConnect.Domain.Entities;
+using BookConnect.Infrastructure.Persistence;
 
-namespace App.Infrastructure.Repositories;
+namespace BookConnect.Infrastructure.Repositories;
+
 public class BooksRepository : RepositoryBase<Book>, IBooksRepository
 {
     public BooksRepository(ApplicationDbContext context) : base(context)

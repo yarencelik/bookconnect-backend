@@ -29,10 +29,16 @@ public class UsersConfig : IEntityTypeConfiguration<User>
             .HasForeignKey(x => x.Like_User_Id)
             .OnDelete(DeleteBehavior.SetNull);
 
-
+        // User - Reviews Config
         builder
             .HasMany(x => x.BookReviews)
             .WithOne(x => x.Reviewer)
             .HasForeignKey(x => x.Reviewer_Id);
+
+        // User - Shelf Config
+        builder
+            .HasMany(x => x.Shelves)
+            .WithOne(x => x.Owner)
+            .HasForeignKey(x => x.OwnerId);
     }
 }

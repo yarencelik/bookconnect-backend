@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Reflection;
 using BookConnect.Application.Features.Auth;
+using BookConnect.Application.Features.Shelves;
 
 namespace BookConnect.Infrastructure.Persistence;
 
@@ -20,11 +21,12 @@ public sealed class ApplicationDbContext : DbContext
 
     private readonly IConfiguration _config;
     private readonly IPasswordService _passwordService;
-
-    public ApplicationDbContext(IConfiguration config, IPasswordService passwordService)
+    private readonly IShelfService _shelfService;
+    public ApplicationDbContext(IConfiguration config, IPasswordService passwordService, IShelfService shelfService)
     {
         _config = config;
         _passwordService = passwordService;
+        _shelfService = shelfService;
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -36,7 +38,7 @@ public sealed class ApplicationDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        modelBuilder.AddInitialData(_config, _passwordService);
+        modelBuilder.AddInitialData(_config, _passwordService, _shelfService);
 
         base.OnModelCreating(modelBuilder);
     }

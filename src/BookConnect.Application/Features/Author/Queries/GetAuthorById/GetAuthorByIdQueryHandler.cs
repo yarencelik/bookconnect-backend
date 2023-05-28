@@ -2,12 +2,10 @@ using System.Linq.Expressions;
 using AuthorEntity = BookConnect.Domain.Entities.Author;
 using AutoMapper;
 using MediatR;
-using BookConnect.Application.Features.Author.Queries.GetAuthorById;
 using BookConnect.Application.Features.Author.Models;
-using BookConnect.Application.Features.Author;
 using BookConnect.Application.Common.Exceptions;
 
-namespace App.Application.Features.Author.Queries.GetAuthorById;
+namespace BookConnect.Application.Features.Author.Queries.GetAuthorById;
 
 sealed class GetAuthorsByIdQueryHandler : IRequestHandler<GetAuthorsByIdQuery, AuthorDetailsDto>
 {

@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  appdb:
+    image: postgres
+ 
+  pgadmin:
+    image: dpage/pgadmin4
+
+  redis-db:
+    image: redis
+
+  app.api:
+    image: ${DOCKER_REGISTRY-}appapi
+    build:
+      context: .
+      dockerfile: src/App.API/Dockerfile
+
+volumes:
+  appdb-data:
+  redis-db-data:

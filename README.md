@@ -1,9 +1,10 @@
-# lletr-ap# lletr-api
-Backend services for **`lletr`**
+
+# bookconnect api
+Backend services for **`bookconnect`**
 
 ## Tech
 
-**`lletr`** used some of the following tech and architecture for this project:
+**`bookconnect`** used some of the following tech and architecture for this project:
 
 - [Entity Framework Core](https://learn.microsoft.com/en-us/ef/)  - ORM used for this project.
 - [Postgresql/Npgsql](https://www.npgsql.org/) - Postgresql for .Net and Database used for this project.
@@ -23,64 +24,85 @@ Backend services for **`lletr`**
 ## Installation
 ***Pre-requisites:***
 - Clone this repository 
-- Install .Net Core here => https://dotnet.microsoft.com/en-us/download
-- Install Docker here => https://www.docker.com/
+- Install **Docker** here => https://www.docker.com/
 	- #### Optional (For API Testing):
 		- Install **REST Client** here => https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 		- Install **POSTMAN** here => https://www.postman.com/
-- **`appsettings.json` or `appsettings.Development.json` must be created inside the `src/App.API` folder/project with this format:**
+		
+- Install .Net Core here => https://dotnet.microsoft.com/en-us/download **(Not Required, Only required if you want to run the app locally, and not thru docker)**
+- **This is Required: `appsettings.json` or `appsettings.Development.json` must be created inside the `src/App.API` folder/project with this format:**
 ```sh
 {
-	"Logging": {
-      "LogLevel": {
-        "Default": "Information",
-        "Microsoft.AspNetCore": "Warning"
+  "Serilog": {
+    "Using":  [ "Serilog.Sinks.Console", "Serilog.Sinks.File" ],
+    "MinimumLevel": {
+      "Default": "Information",
+      "Overrride": {
+        "Microsoft": "Warning",
+        "System": "Warning"
       }
     },
-    "ConnectionStrings": {
-      "DB": "Host=localhost:5432;Database=lletr_db;Username=admin;Password=root"
-    },
-    "Seed": {
-      "Admin_Username": "admin",
-      "Admin_Password": "admin",
-      "Admin_Email": "admin@admin.com"
-    },
-    "PasswordSettings": {
-      "Salt":  "0Tenz4aDe-GVWdvgRVf9"
-    },
-    "CacheSettings": {
-      "ConnectionString": "localhost:6379"
-    },
-    "Authentication": {
-      "SecretForKey": "L[S18I}'J&2>&YC(b%~*kOnFvLHv+]vI-sv%!1gpY}8GZ0]NMY%HJMh@vAEjy;Q",
-      "Issuer": "http://localhost:8001",
-      "Audience": "http://localhost:8001"
-    },
-    "ClientURL": "http://localhost:3000"
-  }
+    "WriteTo": [
+      { "Name": "Console" },
+      { 
+        "Name": "File", 
+        "Args": { 
+          "path": "Logs/log-.txt",
+          "rollingInterval": "Day",
+          "rollOnFileSizeLimit": true,
+          "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact"
+        }
+      }
+    ],
+    "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId" ]
+  },
+  "ConnectionStrings": {
+    "DB": "Host=localhost:5432;Database=bookconnect_db;Username=admin;Password=root"
+  },
+  "Seed": {
+    "Admin_Username": "admin",
+    "Admin_Password": "admin",
+    "Admin_Email": "admin@admin.com",
+    "Reader_Username": "reader",
+    "Reader_Password": "reader",
+    "Reader_Email": "reader@reader.com"
+
+  },
+  "PasswordSettings": {
+    "Salt":  "0Tenz4aDe-GVWdvgRVf9"
+  },
+  "CacheSettings": {
+    "ConnectionString": "localhost:6379"
+  },
+  "Authentication": {
+    "SecretForKey": "L[S18I}'J&2>&YC(b%~*kOnFvLHv+]vI-sv%!1gpY}8GZ0]NMY%HJMh@vAEjy;Q",
+    "Issuer": "http://localhost:8001",
+    "Audience": "http://localhost:8001"
+  },
+  "ClientURL": "http://localhost:3000"
+}
 ```
 
-#### In the terminal, kindly enter these commands below:
-```sh
-cd src/App.API 
-dotnet restore
-cd ..
-cd App.Infrastructure
-dotnet restore
-cd ..
-cd App.Application
-dotnet restore
-cd ..
-cd App.Domain
-dotnet restore
-```
-***Note***: `dotnet restore` is a command that can restore project dependencies of each project on this app.
 
-#### For Initializing/Starting the application and the docker apps, kindly enter these commands below:
-***Note***: should be in the root folder.
+
+## Initializing/Starting
+**For Initializing/Starting the application and the docker apps, kindly enter these commands below:**
+
+> ***Note***: should be in the root folder.
+
 ```sh
 docker compose up -d 
-src/App.API
-dotnet run
 ```
-i
+**You can now use the app with specific URLs:**
+- `localhost:8001` **for normal client calls/requests**
+- `localhost:8001/swagger` **for API swagger documentation**
+
+> **Note**: If you already have .NET Core installed on your machine, and you want to run the app locally (and not in docker) kindly enter the command below:
+
+```sh
+src/App.API // Navigate to the API Folder
+dotnet run // To run the Application
+```
+**You can now use the app with specific URLs:**
+- `localhost:5086` **for normal client calls/requests**
+- `localhost:5086/swagger` **for API swagger documentation**

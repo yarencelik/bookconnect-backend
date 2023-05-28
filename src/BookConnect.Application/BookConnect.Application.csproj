@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -19,16 +19,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\App.Domain\App.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Features\Author\" />
     <Folder Include="Features\Auth\Queries\" />
     <Folder Include="Features\Follow\Models\" />
     <Folder Include="Features\Follow\Queries\" />
     <Folder Include="Features\Likes\" />
     <Folder Include="Features\Reviews\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BookConnect.Domain\BookConnect.Domain.csproj" />
   </ItemGroup>
 
 </Project>

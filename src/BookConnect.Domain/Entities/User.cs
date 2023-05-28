@@ -20,4 +20,6 @@ public sealed class User : BaseEntity
 
     public ICollection<Likes> LikedPost { get; set; } = new List<Likes>();
     public ICollection<Review> BookReviews { get; set; } = new List<Review>();
+
+    public ICollection<Shelf> Shelves { get; set; } = new List<Shelf>();
 }

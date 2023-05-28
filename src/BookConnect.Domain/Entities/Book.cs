@@ -13,4 +13,6 @@ public class Book : BaseEntity
     public Author? Author { get; set; }
 
     public ICollection<Review> Reviews { get; set; } = new List<Review>();
+
+    public ICollection<BookShelf> BookShelves { get; set; } = new List<BookShelf>();
 }

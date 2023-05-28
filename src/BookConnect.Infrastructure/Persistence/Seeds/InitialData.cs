@@ -1,4 +1,5 @@
 using BookConnect.Application.Features.Auth;
+using BookConnect.Application.Features.Shelves;
 using BookConnect.Domain.Entities;
 using BookConnect.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
@@ -8,11 +9,12 @@ namespace BookConnect.Infrastructure.Persistence.Seeds;
 
 public static class InitialData
 {
-public static ModelBuilder AddInitialData(this ModelBuilder modelBuilder, IConfiguration config, IPasswordService passwordService) 
+public static ModelBuilder AddInitialData(this ModelBuilder modelBuilder, IConfiguration config, IPasswordService passwordService, IShelfService shelfService) 
 {
 
     var users = new List<User>
     {
+
         new User
         {
             Id = Guid.NewGuid(),
@@ -66,7 +68,14 @@ public static ModelBuilder AddInitialData(this ModelBuilder modelBuilder, IConfi
     modelBuilder
         .Entity<Book>()
         .HasData(book);
-     
+
+    // Generate Shelves
+    var shelvesForAdmin = shelfService.GenerateShelves(users[0].Id);
+    var shelvesForReader = shelfService.GenerateShelves(users[1].Id);
+
+    modelBuilder.Entity<Shelf>().HasData(shelvesForAdmin);
+    modelBuilder.Entity<Shelf>().HasData(shelvesForReader);
+
     return modelBuilder;
 }
 }

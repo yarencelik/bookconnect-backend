@@ -11,6 +11,8 @@ using BookConnect.Application.Features.Posts.Models;
 using BookConnect.Application.Features.Posts.Queries;
 using BookConnect.Application.Features.Reviews.Models;
 using BookConnect.Application.Features.Reviews.Queries.GetUsersReviews;
+using BookConnect.Application.Features.Shelves.Models;
+using BookConnect.Application.Features.Shelves.Queries.GetShelvesByUserId;
 using BookConnect.Application.Features.Users.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -227,6 +229,33 @@ public class UsersController : BaseController
         {
             
             return StatusCode(StatusCodes.Status500InternalServerError,
+            new 
+            {
+                errorMessage = ex.Message
+            });
+        }
+    }
+
+    [HttpGet("{userId}/shelves")]
+    public async Task<ActionResult<PaginatedResults<ShelvesDetailsDto>>> GetUsersShelves(string userId, string? shelfName, int page = 1, int pageSize = 10)
+    {
+        try
+        {
+            var request = new GetShelvesByUserIdQuery
+            {
+                UserId = userId,
+                ShelfName = shelfName ?? string.Empty,
+                Page = page,
+                PageSize = pageSize
+            };
+
+            var results = await mediator.Send(request);
+
+            return Ok(results);
+        }
+        catch(Exception ex)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, 
             new 
             {
                 errorMessage = ex.Message

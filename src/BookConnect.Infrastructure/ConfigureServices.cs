@@ -5,6 +5,7 @@ using BookConnect.Application.Features.Follow;
 using BookConnect.Application.Features.Likes;
 using BookConnect.Application.Features.Posts;
 using BookConnect.Application.Features.Reviews;
+using BookConnect.Application.Features.Shelves;
 using BookConnect.Application.Features.Users;
 using BookConnect.Infrastructure.Persistence;
 using BookConnect.Infrastructure.Repositories;
@@ -27,6 +28,7 @@ public static class ConfigureServices
         // Services
         services.AddScoped<IJwtService, JwtService>();
         services.AddScoped<IPasswordService, PasswordService>();
+        services.AddScoped<IShelfService, ShelfService>();
 
         // Repositories
         services.AddScoped<IUsersRepository, UsersRepository>();
@@ -36,6 +38,9 @@ public static class ConfigureServices
         services.AddScoped<ILikesRepository, LikesRepository>();
         services.AddScoped<IFollowRepository, FollowRepository>();
         services.AddScoped<IReviewsRepository, ReviewsRepository>();
+        services.AddScoped<IShelfRepository, ShelfRepository>();
+        services.AddScoped<IBookShelfRepository, BookShelfRepository>();
+
         return services;
     }
 }

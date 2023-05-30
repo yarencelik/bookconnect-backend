@@ -6,6 +6,8 @@
 # ENV
 appsettings.json
 appsettings.*.json
+.env.Development
+.env.Production
 
 # User-specific files
 *.rsuser

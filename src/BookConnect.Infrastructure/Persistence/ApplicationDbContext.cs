@@ -18,6 +18,7 @@ public sealed class ApplicationDbContext : DbContext
     public DbSet<Likes> Likes => Set<Likes>();
     public DbSet<Follow> Follows => Set<Follow>();
     public DbSet<Review> Reviews => Set<Review>();
+    public DbSet<Shelf> Shelves => Set<Shelf>();
 
     private readonly IConfiguration _config;
     private readonly IPasswordService _passwordService;

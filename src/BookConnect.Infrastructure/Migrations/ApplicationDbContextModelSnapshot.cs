@@ -8,7 +8,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace App.Infrastructure.Migrations
+namespace BookConnect.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -87,23 +87,23 @@ namespace App.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7b864770-92a1-4a75-8f8f-2a8811558f7e"),
-                            CreatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(123),
+                            Id = new Guid("b4d674b8-5d3f-4b63-b10a-1ac68493d141"),
+                            CreatedAt = new DateTime(2023, 5, 30, 23, 3, 47, 475, DateTimeKind.Utc).AddTicks(572),
                             Genre = "SampleGenre",
                             ISBN = "9781234567897",
                             Pages = 300,
                             Title = "SampleTitle",
-                            UpdatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(123)
+                            UpdatedAt = new DateTime(2023, 5, 30, 23, 3, 47, 475, DateTimeKind.Utc).AddTicks(574)
                         },
                         new
                         {
-                            Id = new Guid("d22e0bd7-048a-4442-bee4-ebd6a189c6ea"),
-                            CreatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(165),
+                            Id = new Guid("1e246bc2-928a-4631-9a12-276ca8562cd1"),
+                            CreatedAt = new DateTime(2023, 5, 30, 23, 3, 47, 475, DateTimeKind.Utc).AddTicks(578),
                             Genre = "SampleGenre2",
                             ISBN = "9781234567444",
                             Pages = 200,
                             Title = "SampleTitle2",
-                            UpdatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(166)
+                            UpdatedAt = new DateTime(2023, 5, 30, 23, 3, 47, 475, DateTimeKind.Utc).AddTicks(578)
                         });
                 });
 
@@ -278,57 +278,7 @@ namespace App.Infrastructure.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Shelf");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("96d2a8b7-5fd4-41ba-8b2e-6b4fb3e27244"),
-                            CreatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(227),
-                            OwnerId = new Guid("da1cd637-6923-4e22-a597-55b8e811240b"),
-                            ShelfName = "Favorite",
-                            UpdatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(228)
-                        },
-                        new
-                        {
-                            Id = new Guid("7ce327a5-f0c9-4ada-9185-2d95fb78a809"),
-                            CreatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(240),
-                            OwnerId = new Guid("da1cd637-6923-4e22-a597-55b8e811240b"),
-                            ShelfName = "Currently Reading",
-                            UpdatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(240)
-                        },
-                        new
-                        {
-                            Id = new Guid("3f231a68-f48f-4ac1-b339-a95ac0df14d9"),
-                            CreatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(242),
-                            OwnerId = new Guid("da1cd637-6923-4e22-a597-55b8e811240b"),
-                            ShelfName = "Read",
-                            UpdatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(243)
-                        },
-                        new
-                        {
-                            Id = new Guid("866800b0-4756-4d18-a49b-668b98f6ccb0"),
-                            CreatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(245),
-                            OwnerId = new Guid("ce8f7fe1-7c79-441f-9a6e-041552fe5117"),
-                            ShelfName = "Favorite",
-                            UpdatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(245)
-                        },
-                        new
-                        {
-                            Id = new Guid("82d2f019-d1c3-485b-aed2-dfd48068ca7e"),
-                            CreatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(246),
-                            OwnerId = new Guid("ce8f7fe1-7c79-441f-9a6e-041552fe5117"),
-                            ShelfName = "Currently Reading",
-                            UpdatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(247)
-                        },
-                        new
-                        {
-                            Id = new Guid("72239fcb-91cd-41ea-bec7-51af80354756"),
-                            CreatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(248),
-                            OwnerId = new Guid("ce8f7fe1-7c79-441f-9a6e-041552fe5117"),
-                            ShelfName = "Read",
-                            UpdatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 791, DateTimeKind.Utc).AddTicks(248)
-                        });
+                    b.ToTable("Shelves");
                 });
 
             modelBuilder.Entity("BookConnect.Domain.Entities.User", b =>
@@ -367,28 +317,6 @@ namespace App.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("da1cd637-6923-4e22-a597-55b8e811240b"),
-                            CreatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 396, DateTimeKind.Utc).AddTicks(4162),
-                            Email = "admin@admin.com",
-                            Password = "$argon2id$v=19$m=65536,t=3,p=4$MFRlbno0YURlLUdWV2R2Z1JWZjk$hHv/O3Uob/FVXCKwvoXfdD1pRVrlm4Y4gM9HnkRgLm4",
-                            Role = 0,
-                            UpdatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 396, DateTimeKind.Utc).AddTicks(4165),
-                            Username = "admin"
-                        },
-                        new
-                        {
-                            Id = new Guid("ce8f7fe1-7c79-441f-9a6e-041552fe5117"),
-                            CreatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 790, DateTimeKind.Utc).AddTicks(9440),
-                            Email = "reader@reader.com",
-                            Password = "$argon2id$v=19$m=65536,t=3,p=4$MFRlbno0YURlLUdWV2R2Z1JWZjk$L9ahKZ719vSNb9qGr2vMdi2WrUcBmdmf5YKFRzsn6c8",
-                            Role = 2,
-                            UpdatedAt = new DateTime(2023, 5, 28, 10, 3, 40, 790, DateTimeKind.Utc).AddTicks(9443),
-                            Username = "reader"
-                        });
                 });
 
             modelBuilder.Entity("BookConnect.Domain.Entities.Author", b =>

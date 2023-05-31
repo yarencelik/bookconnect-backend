@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace App.Infrastructure.Migrations
+namespace BookConnect.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class DbInit : Migration
@@ -103,6 +103,27 @@ namespace App.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Shelves",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    ShelfName = table.Column<string>(type: "text", nullable: false),
+                    OwnerId = table.Column<Guid>(type: "uuid", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Shelves", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Shelves_Users_OwnerId",
+                        column: x => x.OwnerId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Books",
                 columns: table => new
                 {
@@ -153,6 +174,33 @@ namespace App.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "BookShelf",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    BookId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ShelfId = table.Column<Guid>(type: "uuid", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BookShelf", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_BookShelf_Books_BookId",
+                        column: x => x.BookId,
+                        principalTable: "Books",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BookShelf_Shelves_ShelfId",
+                        column: x => x.ShelfId,
+                        principalTable: "Shelves",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Reviews",
                 columns: table => new
                 {
@@ -186,17 +234,8 @@ namespace App.Infrastructure.Migrations
                 columns: new[] { "Id", "AuthorId", "CreatedAt", "Genre", "ISBN", "Pages", "Title", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { new Guid("2c47fdea-2638-49e4-9f75-6283fe17fb32"), null, new DateTime(2023, 5, 28, 1, 5, 33, 456, DateTimeKind.Utc).AddTicks(1300), "SampleGenre", "9781234567897", 300, "SampleTitle", new DateTime(2023, 5, 28, 1, 5, 33, 456, DateTimeKind.Utc).AddTicks(1301) },
-                    { new Guid("607cf571-234e-48ba-b46c-1d62cd804a86"), null, new DateTime(2023, 5, 28, 1, 5, 33, 456, DateTimeKind.Utc).AddTicks(1325), "SampleGenre2", "9781234567444", 200, "SampleTitle2", new DateTime(2023, 5, 28, 1, 5, 33, 456, DateTimeKind.Utc).AddTicks(1326) }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "Id", "CreatedAt", "Email", "FirstName", "LastName", "Password", "Role", "UpdatedAt", "Username" },
-                values: new object[,]
-                {
-                    { new Guid("9df75e45-23c9-42c3-8c13-93bb1e2c2049"), new DateTime(2023, 5, 28, 1, 5, 33, 456, DateTimeKind.Utc).AddTicks(600), "reader@reader.com", null, null, "$argon2id$v=19$m=65536,t=3,p=4$MFRlbno0YURlLUdWV2R2Z1JWZjk$L9ahKZ719vSNb9qGr2vMdi2WrUcBmdmf5YKFRzsn6c8", 2, new DateTime(2023, 5, 28, 1, 5, 33, 456, DateTimeKind.Utc).AddTicks(603), "reader" },
-                    { new Guid("d1580a6e-4e9b-4f98-8d4f-de6e73f84af0"), new DateTime(2023, 5, 28, 1, 5, 33, 63, DateTimeKind.Utc).AddTicks(6318), "admin@admin.com", null, null, "$argon2id$v=19$m=65536,t=3,p=4$MFRlbno0YURlLUdWV2R2Z1JWZjk$hHv/O3Uob/FVXCKwvoXfdD1pRVrlm4Y4gM9HnkRgLm4", 0, new DateTime(2023, 5, 28, 1, 5, 33, 63, DateTimeKind.Utc).AddTicks(6321), "admin" }
+                    { new Guid("1e246bc2-928a-4631-9a12-276ca8562cd1"), null, new DateTime(2023, 5, 30, 23, 3, 47, 475, DateTimeKind.Utc).AddTicks(578), "SampleGenre2", "9781234567444", 200, "SampleTitle2", new DateTime(2023, 5, 30, 23, 3, 47, 475, DateTimeKind.Utc).AddTicks(578) },
+                    { new Guid("b4d674b8-5d3f-4b63-b10a-1ac68493d141"), null, new DateTime(2023, 5, 30, 23, 3, 47, 475, DateTimeKind.Utc).AddTicks(572), "SampleGenre", "9781234567897", 300, "SampleTitle", new DateTime(2023, 5, 30, 23, 3, 47, 475, DateTimeKind.Utc).AddTicks(574) }
                 });
 
             migrationBuilder.CreateIndex(
@@ -209,6 +248,16 @@ namespace App.Infrastructure.Migrations
                 name: "IX_Books_AuthorId",
                 table: "Books",
                 column: "AuthorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BookShelf_BookId",
+                table: "BookShelf",
+                column: "BookId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BookShelf_ShelfId",
+                table: "BookShelf",
+                column: "ShelfId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Follows_Follower_Id",
@@ -244,11 +293,19 @@ namespace App.Infrastructure.Migrations
                 name: "IX_Reviews_Reviewer_Id",
                 table: "Reviews",
                 column: "Reviewer_Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Shelves_OwnerId",
+                table: "Shelves",
+                column: "OwnerId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "BookShelf");
+
             migrationBuilder.DropTable(
                 name: "Follows");
 
@@ -257,6 +314,9 @@ namespace App.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "Reviews");
+
+            migrationBuilder.DropTable(
+                name: "Shelves");
 
             migrationBuilder.DropTable(
                 name: "Posts");
